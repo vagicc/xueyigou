@@ -1,0 +1,41 @@
+{{#*inline "child"}}
+<div class="container">
+    <div class="register">
+        <h2>注册</h2>
+        <div class=" register-top">
+            <form action="" method="post">
+                <div>
+                    <span>会员名</span>
+                    <input type="text" name="username" value="<?= old('username') ?>">
+                    <?= \Config\Services::validation()->showError('username'); ?>
+                </div>
+                <div>
+                    <span>手机号码</span>
+                    <input type="text" name="mobile" id="mobile" value="<?= old('mobile') ?>">
+                    <?= \Config\Services::validation()->showError('mobile'); ?>
+                </div>
+                <div>
+                    <span>邮箱(Email)</span>
+                    <input type="text" id="validate_email" name="email" value="<?= old('email') ?>">
+                    <?= \Config\Services::validation()->showError('email'); ?>
+                </div>
+                <div>
+                    <span>密码</span>
+                    <input type="password" name="password" id="password" placeholder="请输入密码">
+                    <?= \Config\Services::validation()->showError('password'); ?>
+                </div>
+                <div>
+                    <span>确认密码</span>
+                    <input type="password" name="passwd" id="passwd" placeholder="请再次输入密码">
+                    <?= \Config\Services::validation()->showError('passwd'); ?>
+                </div>
+                <input type="hidden" name="jumpURL" value="<?=site_url('login/index/');?>">
+                <input type="hidden" name="message" value="恭喜你，注册成功!!现在可以用你账号登录！！">
+                <input type="submit" value="确认注册">
+            </form>
+        </div>
+    </div>
+</div>
+{{/inline}}
+{{! remove whitespaces with ~ }}
+{{~> (parent)~}}

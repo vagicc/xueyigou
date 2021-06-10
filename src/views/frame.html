@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>学艺购</title>
+    <!-- <base href="https://localhost:5898/static/Sport/" /> -->
+    <base href="{{base_url}}static/Sport/" />
+    <meta charset="utf-8" />
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Custom Theme files -->
+    <!--theme-style-->
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!--//theme-style-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="学艺购" />
+    <script type="application/x-javascript">
+        addEventListener("load", function() {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+</head>
+
+<body>
+    <div class="line">
+    </div>
+    <div class="header">
+        <div class="logo">
+            <a href="index.html">
+                <!-- <img src="images/logo.png" alt=""> -->
+                <img src="images/logo-xyg.jpg" alt="" width="286" height="106">
+            </a>
+        </div>
+        <div class="header-top">
+            <div class="header-grid">
+                <ul class="header-in">
+                    <?php if (session('id')) : ?>
+                    <li><a href="<?= base_url('customer/index'); ?>">个人中心 </a> </li>
+                    <?php else : ?>
+                    <li><a href="{{base_url}}login/">注册登录 </a> </li>
+                    <?php endif; ?>
+
+                    <li>
+                        <select class="in-drop">
+                            <option value="Dollars" class="in-of">Dollars</option>
+                            <option value="Euro" class="in-of">Euro</option>
+                            <option value="Yen" class="in-of">Yen</option>
+                        </select>
+                    </li>
+                </ul>
+                <div class="search-box">
+                    <div id="sb-search" class="sb-search">
+                        <form>
+                            <input class="sb-search-input" placeholder="请输入关键字..." type="search" name="search"
+                                id="search">
+                            <input class="sb-search-submit" type="submit" value="">
+                            <span class="sb-icon-search"> </span>
+                        </form>
+                    </div>
+                </div>
+                <!-- search-scripts -->
+                <script src="js/classie.js"></script>
+                <script src="js/uisearch.js"></script>
+                <script>
+                    new UISearch(document.getElementById('sb-search'));
+                </script>
+                <!-- //search-scripts -->
+                <div class="online">
+                    <a href="single.html">购物车</a>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="header-bottom">
+                <div class="h_menu4">
+                    <!-- start h_menu4 -->
+                    <a class="toggleMenu" href="javascript:void(0)">分类</a>
+                    <ul class="nav">
+                        <li class="active"><a href="javascript:void(0)">首页</a></li>
+                        <li><a href="javascript:void(0)">学术购买</a></li>
+                        <li><a href="javascript:void(0)">0元购</a></li>
+                        <li><a href="javascript:void(0)">私人定制</a></li>
+                        <li><a href="javascript:void(0)">社会实践</a></li>
+                        <li><a href="javascript:void(0)">招商加盟</a></li>
+                        <li><a href="product.html">联系我们</a></li>
+
+                        <li><a href="product.html">社区 <i> </i></a>
+                            <ul>
+                                <li><a href="contact.html">公益资讯</a></li>
+                                <li><a href="account.html">学生实践</a></li>
+                               
+                            </ul>
+                        </li>
+                    </ul>
+                    <script type="text/javascript" src="js/nav.js"></script>
+                </div>
+                <ul class="header-bottom-in">
+                    <li><select class="drop">
+                            <option value="Dollars" class="in-of">Get Active</option>
+                            <option value="Euro" class="in-of">Get Active1</option>
+                            <option value="Yen" class="in-of">Get Active2</option>
+                        </select> </li>
+                    <li><select class="drop">
+                            <option value="Dollars" class="in-of">Community</option>
+                            <option value="Euro" class="in-of">Community1</option>
+                            <option value="Yen" class="in-of">Community2</option>
+                        </select></li>
+                </ul>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+
+    <!-- 中间内容 -->
+    <!-- 这里插入中间部分 -->
+    {{~> child}}
+
+
+    <div class="footer">
+        <div class="col-md-3 footer-left">
+            <h4>Sports</h4>
+            <div class="run-top">
+                <ul class="run-grid">
+                    <li><a href="product.html">RUNNING</a></li>
+                    <li><a href="product.html">CYCLING</a></li>
+                    <li><a href="product.html">TRIATHLON</a></li>
+                    <li><a href="product.html">FITNESS</a></li>
+                    <li><a href="product.html">TENNIS</a></li>
+                    <li><a href="product.html">MORE SPORTS</a></li>
+                </ul>
+                <ul class="run-grid">
+                    <li><a href="product.html">STYLE</a></li>
+                    <li><a href="product.html">SPECIAL</a></li>
+                    <li><a href="product.html">BRAND EVENTS</a></li>
+                </ul>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <div class="col-md-3 footer-left left-footer">
+            <h4>Latest</h4>
+            <div class="run-top top-run">
+                <ul class="run-grid">
+                    <li><a href="#">News & Events</a></li>
+                    <li><a href="#">Community</a></li>
+                    <li><a href="#">Videos</a></li>
+                    <li><a href="single.html">Shopping</a></li>
+                    <li><a href="#">Sponsorships</a></li>
+                    <li><a href="#">more sports</a></li>
+                </ul>
+                <ul class="run-grid">
+                    <li><a href="#">Clubs and Training</a></li>
+                    <li><a href="contact.html">Event Map</a></li>
+                    <li><a href="#">Challenge the world</a></li>
+                </ul>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <div class="col-md-2 footer-left left-footer">
+            <h4>Your Account</h4>
+            <ul class="run-grid-in">
+                <li><a href="account.html">Login</a></li>
+                <li><a href="#">My Sports</a></li>
+                <li><a href="#">My Events</a></li>
+            </ul>
+        </div>
+        <div class="col-md-4 footer-left left-footer">
+            <ul class="social-in">
+                <li><a href="#"><i> </i></a></li>
+                <li><a href="#"><i class="youtube"> </i></a></li>
+                <li><a href="#"><i class="facebook"> </i></a></li>
+                <li><a href="#"><i class="twitter"> </i></a></li>
+            </ul>
+            <div class="letter">
+                <h5>NEWSLETTER</h5>
+                <span>in the next article</span>
+                <h6>NRL: five things we learned this weekend</h6>
+                <p>In support of suburban games; Warriors rip</p>
+                <a href="register.html" class="sign">注册获得更多优惠</a>
+                <p class="footer-class">版权所有 学艺购 &copy; <a target="_blank"
+                        href="http://beian.miit.gov.cn/">粤ICP备2021032779号</a>
+
+                </p>
+            </div>
+
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+</body>
+
+</html>

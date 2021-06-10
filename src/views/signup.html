@@ -1,0 +1,67 @@
+{{#*inline "child"}}
+<div class="container">
+    <div class="register">
+        <h2>注册</h2>
+        {{#if msg}}
+        <h4 style="color: red;">{{msg}}</h4>
+        {{/if}}
+        <div class=" register-top">
+            <form action="" method="post">
+                <div>
+                    <span>会员名</span>
+                    <input type="text" name="username" value="{{username}}">
+
+                </div>
+                <div>
+                    <span>手机号码</span>
+                    <input type="text" name="mobile" id="mobile" value="{{mobile}}">
+
+                </div>
+                <div>
+                    <span>邮箱(Email)</span>
+                    <input type="text" id="validate_email" name="email" value="{{email}}">
+
+                </div>
+                <div>
+                    <span>密码</span>
+                    <input type="password" name="password" id="password" placeholder="请输入密码">
+
+                </div>
+                <div>
+                    <span>确认密码</span>
+                    <input type="password" name="passwd" id="passwd" placeholder="请再次输入密码">
+
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox" class="icheck pull-left" name="student" id="student" /> 学生认证
+                    </label>
+                </div>
+
+                <input type="hidden" name="is_student" value="false">
+                <input type="hidden" name="jumpURL" value="{{base_url}}login/index/">
+                <input type="hidden" name="message" value="恭喜你，注册成功!!现在可以用你账号登录！！">
+                <input type="submit" value="确认注册">
+                <!-- <input type="button" value="立马登录"> -->
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    /* 是否注册学生认证 */
+    $("#student").click(function () {
+        if ($("#student").prop("checked")) {
+            // alert('要进行学生认证');
+            $("input[name='is_student']").val(true);
+            var jumpURL = "{{base_url}}register/succeed/";
+        } else {
+            // alert('no');
+            $("input[name='is_student']").val(false);
+            var jumpURL = "{{base_url}}login/index/";
+        }
+        $("input[name='jumpURL']").val(jumpURL);
+    });
+</script>
+{{/inline}}
+{{! remove whitespaces with ~ }}
+{{~> (parent)~}}

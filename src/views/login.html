@@ -1,0 +1,45 @@
+{{#*inline "child"}}
+<div class="container">
+    <div class="account">
+        <h2>
+            <?= \Config\Services::session()->getFlashdata('message') ?: "登录注册" ?>
+        </h2>
+        <div class="account-pass">
+            <div class="col-md-7 account-top">
+                <form action="<?= site_url('login/check') ?>" method="post">
+                    <div>
+                        <center class="error">
+                            <?= \Config\Services::session()->getFlashdata('error') ?>
+                        </center>
+
+                    </div>
+                    <div>
+                        <span>会员名</span>
+                        <input type="text" name="username" value="<?= old('username') ?>">
+                        <?= \Config\Services::validation()->showError('username'); ?>
+                    </div>
+                    <div>
+                        <span>密码</span>
+                        <input type="password" name="password" id="password" placeholder="请输入密码">
+                        <?= \Config\Services::validation()->showError('password'); ?>
+                    </div>
+                    <input type="hidden" name="jumpURL" value="<?= site_url('customer/index/'); ?>">
+                    <input type="submit" value="登录">
+                </form>
+            </div>
+            <div class="col-md-5 left-account ">
+                <a href="single.html"><img class="img-responsive " src="images/ac.png" alt=""></a>
+                <div class="five">
+                    <h1>25% </h1><span>discount</span>
+                </div>
+                <a href="{{base_url}}signup/" class="create">我要注册新账户</a>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+
+</div>
+{{/inline}}
+{{! remove whitespaces with ~ }}
+{{~> (parent)~}}
